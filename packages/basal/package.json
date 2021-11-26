@@ -1,0 +1,11 @@
+{
+  "name": "basal",
+  "version": "0.0.1",
+  "description": "dular and customizable Basal UI components for the web",
+  "author": "Julian Coleman <jcoleman.engineering@gmail.com>",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "umd:main": "dist/base.umd.production.js",
+  "module": "dist/base.esm.js",
+  "typings": "dist/index.d.ts"
+}

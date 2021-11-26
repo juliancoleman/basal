@@ -1,0 +1,20 @@
+{
+  "name": "@basal/base",
+  "version": "0.0.1",
+  "description": "The set of base classes for Basal for the web",
+  "author": "Julian Coleman <jcoleman.engineering@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "build": "NODE_ENV=production tsdx build --tsconfig tsconfig.build.json",
+    "lint": "tsdx lint",
+    "prepublish": "npm run build",
+    "start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean"
+  },
+  "main": "dist/index.js",
+  "umd:main": "dist/base.umd.production.js",
+  "module": "dist/base.esm.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "classnames": "^2.3.1"
+  }
+}
