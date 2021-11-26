@@ -24,16 +24,16 @@ Months go by and your boss decides they want to add another color palette to the
 
 A few months after this, your friend comes to you and says, _"Can you help me debug this issue? I can't figure out why a `<div>` nested under a `<td>` isn't taking up the full height of the `<td>`."_ You solve your friend's problem only to realize that this same problem has been solved about a thousand million times and not one component library implements such a fix. So your friend implements the fix in their LESS file and forgets about it a day later.
 
-Another friend comes to you and asks why their Dialog is not perfectly centered to the window instead of the Dialog's parent, just to find their current component library was aggressively [Portaling]() and setting the CSS position manually, and you solve that problem, too. You spend the next several years solving all of these problems to make the internet a better user experience.
+Another friend comes to you and asks why their Dialog is centered to the window instead of the Dialog's parent, just to find their current component library was aggressively [Portaling]() and setting the CSS position manually, and you solve that problem, too. You spend the next several years solving all of these problems to make the internet a better user experience.
 
-Fast forward those several more years, having solved about a hundred of these CSS problems, and you're the CTO of a new and upcoming tech company. Your business partners, who are also seasoned Full-Stack engineers are aware of your expertise in making component libraries, and so they ask you to make one. At this point, you can go back to the beginning of the [Why](#why-1) section and start reading.
+Fast forward those several more years, having solved about a hundred of these CSS problems, and you're the CTO of a new and upcoming tech company. Your business partners, who are also seasoned Full-Stack engineers are aware of your expertise in making component libraries, and so they ask you to make one. At this point, you can go back to the beginning of the [Why](#why) section and start reading.
 
 ## Installation
 
 You can install Basal as a whole with NPM
 
 ```
-# not available during current development. Please install packages directly
+# not available during current development. Please install individual components directly
 npm i basal
 ```
 
@@ -58,6 +58,12 @@ npm run lerna bootstrap
 You can test each component in the library by running the following
 
 ```
+npm run lerna run test
+```
+
+Or you can test each individual component by `cd`ing into `packages/<component>` and running the following:
+
+```
 npm run test
 ```
 
@@ -77,7 +83,9 @@ And running the following in the other.
 npm run cypress
 ```
 
-You can add more tests in `cypress/integration` following the same pattern as other files.
+If you want to also run Cypress E2E tests in your own app that uses Basal, copy the `cypress` directory into your project, run `npm i -D cypress`, and add your own tests to `cypress/integration`. You'll need to remove the other tests that you copied over, of course, but you can use them as a reference while developing your own tests.
+
+When contributing to Basal, you can add more tests in `cypress/integration` following the same pattern as other files.
 
 Note: If Cypress isn't already installed on your system, it will attempt to be installed automatically at this time. You can [read their docs]() if you have any other troubles running Cypress.
 
@@ -93,4 +101,4 @@ React 16.8, which introduced [Hooks](). However, internally the latest version o
 
 ### Why use Tailwind under the hood?
 
-I don't believe people should waste time writing CSS. A long time ago, this would otherwise be okay. But after 2020, writing CSS just stopped making sense. Set your organization's color palette and make your small visual changes with Tailwind classes and get to focusing on solving business problems.
+I don't believe developers should waste time writing CSS. A long time ago, this would otherwise be okay. But after 2020, writing CSS just stopped making sense. Set your organization's color palette and make your small visual changes with Tailwind classes and get to focusing on solving real business problems.
